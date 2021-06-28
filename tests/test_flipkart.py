@@ -3,8 +3,8 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver import ActionChains
 import time
 from utilities.BaseClass import BaseClass
-from pageObjects.loginPage import LoginPage
-from pageObjects.homePage import HomePage
+from pageObjects.loginPageflipkart import LoginPage
+from pageObjects.homePageflipkart import HomePage
 import pytest
 
 class TestFlipkart(BaseClass):
