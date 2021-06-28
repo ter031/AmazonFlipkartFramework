@@ -8,6 +8,7 @@ class LoginPage:
     passwordBox = (By.XPATH, "//input[@type='password']")
     submitButton = (By.XPATH, "//button[@class='_2KpZ6l _2HKlqd _3AWRsL']")
     failedTextLogin = (By.CSS_SELECTOR, "span[class='_2YULOR'] span")
+    forgetPasswordLink = (By.LINK_TEXT, "Forgot?")
 
     def LoginButton(self):
         return self.driver.find_element(*LoginPage.loginButton)
@@ -20,3 +21,6 @@ class LoginPage:
 
     def VerifyFailedLoginText(self):
         return self.driver.find_element(*LoginPage.failedTextLogin)
+
+    def ClickForgetPasswordLink(self):
+        return self.driver.find_element(*LoginPage.forgetPasswordLink)
