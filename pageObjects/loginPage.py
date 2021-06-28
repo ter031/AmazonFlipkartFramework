@@ -10,13 +10,13 @@ class LoginPage:
     failedTextLogin = (By.CSS_SELECTOR, "span[class='_2YULOR'] span")
 
     def LoginButton(self):
-        self.driver.find_element(*LoginPage.loginButton)
+        return self.driver.find_element(*LoginPage.loginButton)
 
     def EnterPassword(self):
-        self.driver.find_element(*LoginPage.passwordBox)
+        return self.driver.find_element(*LoginPage.passwordBox)
 
     def ClickSubmit(self):
-        self.driver.find_element(*LoginPage.submitButton)
+        return self.driver.find_element(*LoginPage.submitButton)
 
     def VerifyFailedLoginText(self):
-        self.driver.find_element(*LoginPage.failedTextLogin)
+        return self.driver.find_element(*LoginPage.failedTextLogin)

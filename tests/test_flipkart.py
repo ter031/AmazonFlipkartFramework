@@ -1,10 +1,11 @@
-from selenium import webdriver
+import selenium
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver import ActionChains
 import time
 from utilities.BaseClass import BaseClass
 from pageObjects.loginPage import LoginPage
 from pageObjects.homePage import HomePage
+import pytest
 
 class TestFlipkart(BaseClass):
 
@@ -38,4 +39,5 @@ class TestFlipkart(BaseClass):
         action.move_to_element(menu).perform()
         homepage.ClickMyProfileLink().click()
         ProfilePageURL = self.driver.current_url
+
         assert ProfilePageURL == "https://www.flipkart.com/account/?rd=0&link=home_account"

@@ -9,10 +9,10 @@ class HomePage:
     MyProfileLink = (By.XPATH, "//*[@id='container']/div/div[1]/div[1]/div[2]/div[3]/div/div/div[2]/div[2]/div/ul/li[1]/a")
 
     def TextVerification(self):
-        self.driver.find_element(*HomePage.AccountVerificationText)
+        return self.driver.find_element(*HomePage.AccountVerificationText)
 
     def AllMenuItems(self):
-        self.driver.find_element(*HomePage.MenuItems)
+        return self.driver.find_element(*HomePage.MenuItems)
 
     def ClickMyProfileLink(self):
-        self.driver.find_element(*HomePage.MyProfileLink)
+        return self.driver.find_element(*HomePage.MyProfileLink)
