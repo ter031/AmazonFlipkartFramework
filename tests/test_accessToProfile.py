@@ -7,20 +7,20 @@ from pageObjects.loginPage import LoginPage
 from pageObjects.homePage import HomePage
 import pytest
 
-class TestFlipkart(BaseClass):
+class TestAccessToProfile(BaseClass):
 
-    def test_SuccessfulLogin(self):
+    def test_AccesToProfile(self):
         log = self.getLogger()
         loginpage = LoginPage(self.driver)
         homepage = HomePage(self.driver)
         loginpage.LoginButton().send_keys("8130253170")
         loginpage.EnterPassword().send_keys("Bilaspur@123")
         loginpage.ClickSubmit().click()
-        loggedInVerification = homepage.TextVerification().text
-        log.info("My profile added with text"+loggedInVerification)
+        action = ActionChains(self.driver)
+        menu = homepage.AllMenuItems()
+        action.move_to_element(menu).perform()
+        homepage.ClickMyProfileLink().click()
+        ProfilePageURL = self.driver.current_url
+        log.info("profile page url is verifies as"+ProfilePageURL)
 
-        assert "My Account" in loggedInVerification
-
-
-
-
+        assert ProfilePageURL == "https://www.flipkart.com/account/?rd=0&link=home_account"
