@@ -25,3 +25,41 @@ console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resou
 1624871762808	Marionette	INFO	Stopped listening on port 58521
 [Parent 6968, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
 [Parent 6968, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1624941124709	geckodriver	INFO	Listening on 127.0.0.1:57714
+1624941127744	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\deepa\\AppData\\Local\\Temp\\rust_mozprofileKhoRoH"
+1624941130921	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\deepa\\AppData\\Local\\Temp\\rust_mozprofileKhoRoH\\search.json.mozlz4", (void 0)))
+1624941142827	Marionette	INFO	Listening on port 57722
+1624941143587	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624941178965	Marionette	INFO	Stopped listening on port 57722
+JavaScript error: chrome://global/content/elements/browser-custom-element.js, line 1716: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+JavaScript error: https://d1lxz4vuik53pc.cloudfront.net/ii/1619616881531/inner-iframe.min.js, line 1: TypeError: Object(...)() is null
+1624941183212	geckodriver	INFO	Listening on 127.0.0.1:55027
+1624941186284	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\deepa\\AppData\\Local\\Temp\\rust_mozprofileNBS5YJ"
+1624941187040	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\deepa\\AppData\\Local\\Temp\\rust_mozprofileNBS5YJ\\search.json.mozlz4", (void 0)))
+1624941191747	Marionette	INFO	Listening on port 55035
+1624941192899	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624941214260	Marionette	INFO	Stopped listening on port 55035
+1624941216433	geckodriver	INFO	Listening on 127.0.0.1:55140
+1624941219714	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\deepa\\AppData\\Local\\Temp\\rust_mozprofile62zIP6"
+1624941220355	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\deepa\\AppData\\Local\\Temp\\rust_mozprofile62zIP6\\search.json.mozlz4", (void 0)))
+1624941227277	Marionette	INFO	Listening on port 55148
+1624941228082	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624941237098	Marionette	INFO	Stopped listening on port 55148
+[Parent 7604, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1624941240084	geckodriver	INFO	Listening on 127.0.0.1:55238
+1624941243176	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\deepa\\AppData\\Local\\Temp\\rust_mozprofileGgQtkj"
+1624941243748	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\deepa\\AppData\\Local\\Temp\\rust_mozprofileGgQtkj\\search.json.mozlz4", (void 0)))
+1624941251205	Marionette	INFO	Listening on port 55246
+1624941251899	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624941266748	Marionette	INFO	Stopped listening on port 55246
+1624941268964	geckodriver	INFO	Listening on 127.0.0.1:55330
+1624941272457	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\deepa\\AppData\\Local\\Temp\\rust_mozprofileENOWky"
+1624941273032	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\deepa\\AppData\\Local\\Temp\\rust_mozprofileENOWky\\search.json.mozlz4", (void 0)))
+1624941280152	Marionette	INFO	Listening on port 55338
+1624941281254	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624941293544	Marionette	INFO	Stopped listening on port 55338

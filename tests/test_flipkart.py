@@ -6,34 +6,43 @@ from utilities.BaseClass import BaseClass
 from pageObjects.loginPageflipkart import LoginPage
 from pageObjects.homePageflipkart import HomePage
 import pytest
+from TestData.LoginPageDataFlipkart import LoginPageDataFlipkart
 
 class TestFlipkart(BaseClass):
 
-    def test_SuccessfulLogin(self):
+    def test_SuccessfulLogin(self, getDataValidCredentials):
         log = self.getLogger()
         loginpage = LoginPage(self.driver)
         homepage = HomePage(self.driver)
-        loginpage.LoginButton().send_keys("8130253170")
-        loginpage.EnterPassword().send_keys("Bilaspur@123")
+        loginpage.LoginButton().send_keys(getDataValidCredentials["EnterEmailOrMobNumber"])
+        loginpage.EnterPassword().send_keys(getDataValidCredentials["EnterPassword"])
         loginpage.ClickSubmit().click()
         loggedInVerification = homepage.TextVerification().text
         log.info("My profile added with text "+ loggedInVerification)
 
         assert "My Account" in loggedInVerification
 
-    def test_forgetPassword(self):
+    @pytest.fixture(params=LoginPageDataFlipkart.test_ValidloginCredentials)
+    def getDataValidCredentials(self, request):
+        return request.param
+
+    def test_forgetPassword(self, getDataForgetPassword):
         log = self.getLogger()
         loginpage = LoginPage(self.driver)
-        loginpage.LoginButton().send_keys("8130253170")
+        loginpage.LoginButton().send_keys(getDataForgetPassword["EnterEmailOrMobNumber"])
         loginpage.ClickForgetPasswordLink().click()
         log.info("OTP for resetting password received")
 
-    def test_AccesToProfile(self):
+    @pytest.fixture(params=LoginPageDataFlipkart.test_NumberForgetPassword)
+    def getDataForgetPassword(self, request):
+        return request.param
+
+    def test_AccesToProfile(self, getDataValidCredentials):
         log = self.getLogger()
         loginpage = LoginPage(self.driver)
         homepage = HomePage(self.driver)
-        loginpage.LoginButton().send_keys("8130253170")
-        loginpage.EnterPassword().send_keys("Bilaspur@123")
+        loginpage.LoginButton().send_keys(getDataValidCredentials["EnterEmailOrMobNumber"])
+        loginpage.EnterPassword().send_keys(getDataValidCredentials["EnterPassword"])
         loginpage.ClickSubmit().click()
         action = ActionChains(self.driver)
         menu = homepage.AllMenuItems()
@@ -44,16 +53,20 @@ class TestFlipkart(BaseClass):
 
         assert ProfilePageURL == "https://www.flipkart.com/account/?rd=0&link=home_account"
 
-    def test_FailedLogin(self):
+    def test_FailedLogin(self, getDataInvalidCredentials):
         log = self.getLogger()
         loginpage = LoginPage(self.driver)
-        loginpage.LoginButton().send_keys("8130253170")
-        loginpage.EnterPassword().send_keys("abc@123")
+        loginpage.LoginButton().send_keys(getDataInvalidCredentials["EnterEmailOrMobNumber"])
+        loginpage.EnterPassword().send_keys(getDataInvalidCredentials["EnterPassword"])
         loginpage.ClickSubmit().click()
         failedLoginMessage = loginpage.VerifyFailedLoginText().text
         log.info("failed login message is "+ failedLoginMessage)
 
         assert "Your username or password is incorrect" == failedLoginMessage
+
+    @pytest.fixture(params=LoginPageDataFlipkart.test_InvalidloginCredentials)
+    def getDataInvalidCredentials(self, request):
+        return request.param
 
 
 
