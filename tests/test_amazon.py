@@ -17,3 +17,12 @@ class TestAmazon(BaseClass1):
         log.info("searched keywords verified as "+ ResultsText)
 
         assert "digital watches" in ResultsText
+
+    def test_AccessToCanadaPortal(self):
+        log = self.getLogger()
+        homepageamazon = HomePageAmazon(self.driver)
+        homepageamazon.ClickCanadaPortalLink().click()
+        AmazonCanadaPortal = self.driver.current_url
+        log.info("URL to Canada portal is "+ AmazonCanadaPortal)
+
+        assert AmazonCanadaPortal == "https://www.amazon.ca/ref=footer_ca"
