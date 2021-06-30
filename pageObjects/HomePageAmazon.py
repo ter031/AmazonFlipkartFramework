@@ -7,6 +7,7 @@ class HomePageAmazon:
     SearchBox = (By.ID, "twotabsearchtextbox")
     SearchButton = (By.ID, "nav-search-submit-button")
     CanadaPortalLink = (By.LINK_TEXT, "Canada")
+    MobilesLink = (By.LINK_TEXT, "Mobiles")
 
     def EnterSearchCriteria(self):
         return self.driver.find_element(*HomePageAmazon.SearchBox)
@@ -16,3 +17,6 @@ class HomePageAmazon:
 
     def ClickCanadaPortalLink(self):
         return self.driver.find_element(*HomePageAmazon.CanadaPortalLink)
+
+    def ClickMobilesLink(self):
+        return self.driver.find_element(*HomePageAmazon.MobilesLink)
