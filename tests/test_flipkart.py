@@ -22,7 +22,7 @@ class TestFlipkart(BaseClass):
 
         assert "My Account" in loggedInVerification
 
-    @pytest.fixture(params=LoginPageDataFlipkart.test_ValidloginCredentials)
+    @pytest.fixture(params=LoginPageDataFlipkart.getTestValidCredentials("testcase1"))
     def getDataValidCredentials(self, request):
         return request.param
 
