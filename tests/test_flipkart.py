@@ -64,7 +64,7 @@ class TestFlipkart(BaseClass):
 
         assert "Your username or password is incorrect" == failedLoginMessage
 
-    @pytest.fixture(params=LoginPageDataFlipkart.test_InvalidloginCredentials)
+    @pytest.fixture(params=LoginPageDataFlipkart.getTestInvalidCredentials())
     def getDataInvalidCredentials(self, request):
         return request.param
 

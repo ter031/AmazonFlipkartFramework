@@ -16,3 +16,28 @@ class LoginPageDataFlipkart:
                     Dict[sheet.cell(row=1, column=j).value] = sheet.cell(row=i, column=j).value
 
         return[Dict]
+
+    @staticmethod
+    def getTestInvalidCredentials():
+        Dict1 = {}
+        Dict2 = {}
+        Dict3 = {}
+        TestList = []
+        book1 = openpyxl.load_workbook("C:\\Users\\deepa\\OneDrive\\Desktop\\InvalidCredentials.xlsx")
+        sheet1 = book1.active
+        for a in range(1, sheet1.max_row + 1):
+            for b in range(2, sheet1.max_column + 1):
+                Dict1[sheet1.cell(row=1, column=b).value] = sheet1.cell(row=2, column=b).value
+
+        for c in range(1, sheet1.max_row + 1):
+            for d in range(2, sheet1.max_column + 1):
+                Dict2[sheet1.cell(row=1, column=d).value] = sheet1.cell(row=3, column=d).value
+
+        for e in range(1, sheet1.max_row + 1):
+            for f in range(2, sheet1.max_column + 1):
+                Dict3[sheet1.cell(row=1, column=f).value] = sheet1.cell(row=4, column=f).value
+
+        TestList.append(Dict1)
+        TestList.append(Dict2)
+        TestList.append(Dict3)
+        return TestList
